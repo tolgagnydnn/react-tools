@@ -19,6 +19,8 @@ import ZoomIn from './components/tools/ZoomIn'
 import ZoomOut from './components/tools/ZoomOut'
 import Undo from './components/tools/Undo'
 import Redo from './components/tools/Redo'
+import Back from './components/tools/Back'
+import Forward from './components/tools/Forward'
 
  
 
@@ -45,6 +47,8 @@ function App() {
         <ZoomOut></ZoomOut>
         <Undo></Undo>
         <Redo></Redo> 
+        <Back></Back>
+        <Forward></Forward>
       </ToolBox>
     </>
      

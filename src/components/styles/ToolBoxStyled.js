@@ -147,7 +147,7 @@ export const handleSizeType = size => {
   };
 
 
-export const SizeLength = styled.div `
+export const SizeLength = styled.button `
     border-radius: 50%;
     outline: none;
     border:0;
@@ -161,3 +161,26 @@ export const SizeLength = styled.div `
         transform:scale(1);
     }
 `
+
+/*Shape Tool*/
+export const ShapeTool = styled(ColorTool)`
+    display: none;
+    justify-content: center;
+    align-items:center;
+    flex-direction:column;
+    right:-95px;
+    max-width:75px;
+    ${ToolItem}:hover & {
+        display: flex;
+    }
+
+    &:before {
+        content:'';
+        height:100%;
+        width: 50px;
+        position: absolute;
+        left: -30px;
+        background: transparent;
+    }
+`;
+
