@@ -24,6 +24,7 @@ export const ToolItem = styled.div`
     cursor: pointer;
     border-radius:.548rem;
     transition: all .4s ease;
+    position: relative;
     svg {
         fill: #fff;
         width: 25px;
@@ -40,3 +41,65 @@ export const ToolItem = styled.div`
         background: rgba(255,255,255, 0.3);
     }
 `
+export const ColorTool = styled.div `
+    position: absolute;
+    right: -90px;
+    height: auto;
+    max-width:150px;
+    background: #27293d;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap:5px;
+    box-shadow: 0 1px 20px 0 rgb(0 0 0 / 20%);
+    padding: 15px 10px;
+    display: none;
+    ${ToolItem}:hover & {
+        display: grid;
+    }
+    &:before {
+        content:'';
+        height:100%;
+        width: 50px;
+        position: absolute;
+        left: -15px;
+        background: transparent;
+    }
+`
+
+export const handleColorType = color => {
+    switch (color) {
+      case "dark":
+        return "background: #000;";
+      case "danger":
+        return "background: #ff0000;";
+      case "warning":
+        return "background: #ffff00;";
+       case "success":
+        return "background: #008000;";
+       case "primary":
+        return "background: #0000FF;";
+       case "pink":
+        return "background: #ffc0cb;";
+      default:
+        return "background: #000;";
+    }
+  };
+  
+
+export const ColorBox = styled.button `
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    outline: none;
+    border:0;
+    cursor: pointer;
+    transform: scale(0.85);
+    transition: all .5s ease;
+    ${({ color }) => handleColorType(color)};
+    &:hover {
+        transform:scale(1);
+    }
+`
+
+
