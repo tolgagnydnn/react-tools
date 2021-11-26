@@ -9,8 +9,10 @@ export const ToolBox = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     box-shadow: 0 1px 20px 0 rgb(0 0 0 / 10%);
-    margin-top: 50px;
-    margin-left: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     padding: 15px 10px;
 `
 
@@ -41,6 +43,8 @@ export const ToolItem = styled.div`
         background: rgba(255,255,255, 0.3);
     }
 `
+
+/*ColorTool*/
 export const ColorTool = styled.div `
     position: absolute;
     right: -90px;
@@ -86,6 +90,7 @@ export const handleColorType = color => {
     }
   };
   
+  
 
 export const ColorBox = styled.button `
     width: 25px;
@@ -102,4 +107,57 @@ export const ColorBox = styled.button `
     }
 `
 
+/*SizeTool*/
 
+export const SizeTool = styled(ColorTool)`
+    display: none;
+    justify-content: center;
+    align-items:center;
+    flex-direction:column;
+    left: -65px;
+    max-width:50px;
+    ${ToolItem}:hover & {
+        display: flex;
+    }
+    &:before {
+        content:'';
+        height:100%;
+        width: 50px;
+        position: absolute;
+        left: 30px;
+        background: transparent;
+    }
+`;
+
+export const handleSizeType = size => {
+    switch (size) {
+      case "xsmall":
+        return "width: 10px; height: 10px";
+        case "small":
+        return "width: 15px; height: 15px";
+        case "medium":
+        return "width: 20px; height: 20px";
+        case "large":
+        return "width: 30px; height: 30px";
+        case "xlarge":
+        return "width: 40px; height: 40px";
+      default:
+        return "width: 10px; height: 10px";
+    }
+  };
+
+
+export const SizeLength = styled.div `
+    border-radius: 50%;
+    outline: none;
+    border:0;
+    cursor: pointer;
+    transform: scale(0.85);
+    transition: all .5s ease;
+    background: #fff;
+    margin-bottom: 5px;
+    ${({ size }) => handleSizeType(size)};
+    &:hover {
+        transform:scale(1);
+    }
+`
