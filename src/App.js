@@ -1,9 +1,9 @@
 import React from 'react'
-import ToolBox from './components/tools/ToolBox'
+import Tool from './components/tools/Tool'
 
 function App() { 
   return (
-        <ToolBox></ToolBox>
+        <Tool></Tool>
   )
 }
 

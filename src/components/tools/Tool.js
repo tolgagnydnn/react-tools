@@ -26,7 +26,6 @@ function Tool() {
                         })}
                         </ShapeTool>
                     } 
-
                     { tool.childsize && 
                     <SizeTool>
                     {tool.childsize?.map((childsize) => {
@@ -36,7 +35,6 @@ function Tool() {
                         })}
                     </SizeTool>                        
                     }
-
                     { tool.childcolor && 
                     <ColorTool>
                     {tool.childcolor?.map((childcolor) => {

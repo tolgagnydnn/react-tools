@@ -109,7 +109,6 @@ export const ColorBox = styled.button `
 `
 
 /*SizeTool*/
-
 export const SizeTool = styled(ColorTool)`
     display: none;
     justify-content: center;
