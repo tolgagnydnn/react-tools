@@ -1,5 +1,10 @@
 import styled from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
+export const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap');
+
+`
 
 export const ToolBox = styled.div`
     height: auto;
@@ -38,6 +43,7 @@ export const ToolItem = styled.div`
         font-weight:400;
         padding-top: 3px;
         text-align: center;
+        font-family: 'Poppins', sans-serif;
     }
     &:hover {
         background: rgba(255,255,255, 0.3);
@@ -52,12 +58,11 @@ export const ColorTool = styled.div `
     max-width:150px;
     background: #27293d;
     border-radius: 15px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap:5px;
     box-shadow: 0 1px 20px 0 rgb(0 0 0 / 20%);
     padding: 15px 10px;
     display: none;
+    grid-template-columns: 2fr auto;
+    grid-gap: 6px;
     ${ToolItem}:hover & {
         display: grid;
     }
@@ -114,7 +119,7 @@ export const SizeTool = styled(ColorTool)`
     justify-content: center;
     align-items:center;
     flex-direction:column;
-    left: -65px;
+    left: -84px;
     max-width:50px;
     ${ToolItem}:hover & {
         display: flex;
@@ -124,7 +129,7 @@ export const SizeTool = styled(ColorTool)`
         height:100%;
         width: 50px;
         position: absolute;
-        left: 30px;
+        left: 40px;
         background: transparent;
     }
 `;
@@ -168,7 +173,7 @@ export const ShapeTool = styled(ColorTool)`
     justify-content: center;
     align-items:center;
     flex-direction:column;
-    right:-95px;
+    right: -102px;
     max-width:75px;
     ${ToolItem}:hover & {
         display: flex;
