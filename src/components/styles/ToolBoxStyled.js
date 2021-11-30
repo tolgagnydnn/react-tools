@@ -168,12 +168,11 @@ export const ShapeTool = styled(ColorTool)`
     justify-content: center;
     align-items:center;
     flex-direction:column;
-    right: -102px;
     max-width:75px;
+    padding: 10px 8.5px;
     ${ToolItem}:hover & {
         display: flex;
     }
-
     &:before {
         content:'';
         height:100%;
@@ -181,6 +180,16 @@ export const ShapeTool = styled(ColorTool)`
         position: absolute;
         left: -30px;
         background: transparent;
+    }
+    div {
+        margin-bottom: 5px;
+    }
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+    span {
+        font-size:10px;
     }
 `;
 
