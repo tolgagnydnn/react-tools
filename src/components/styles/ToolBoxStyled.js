@@ -5,15 +5,38 @@ export const ToolBox = styled.div`
     height: auto;
     max-width:150px;
     background: #27293d;
-    border-radius: 1rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    border-radius: 1rem;
     box-shadow: 0 1px 20px 0 rgb(0 0 0 / 10%);
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     padding: 15px 10px;
+
+    /* &:before {
+        content: '';
+        background:red;
+        width:100%;
+        position: absolute;
+        top: -25px;
+        left: 0;
+        height:30px;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+    &:after {
+        content: '';
+        background:red;
+        width:100%;
+        position: absolute;
+        bottom: -25px;
+        left: 0;
+        height:30px;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    } */
 `
 
 export const ToolItem = styled.div`

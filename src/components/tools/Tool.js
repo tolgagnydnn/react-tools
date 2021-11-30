@@ -7,7 +7,7 @@ function Tool() {
         <ToolBox>
            {
             tool?.map((tool) => (
-                <ToolItem key="tool.id">
+                <ToolItem key={tool.id}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox={tool.viewbox} version="1.1" preserveAspectRatio="xMidYMid meet">
                         <path d={tool.icon}/>
                     </svg>
@@ -16,7 +16,7 @@ function Tool() {
                         <ShapeTool>
                             {tool.childshapes?.map((childshapes) => {
                             return (
-                                <ToolItem key="childshapes.id"> 
+                                <ToolItem key={childshapes.id}> 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox={childshapes.viewbox}>
                                         <path d={childshapes.icon}/>
                                     </svg>
