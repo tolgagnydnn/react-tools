@@ -1,10 +1,5 @@
 import styled from "styled-components";
-import { createGlobalStyle } from 'styled-components'
 
-export const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap');
-
-`
 
 export const ToolBox = styled.div`
     height: auto;
@@ -22,7 +17,7 @@ export const ToolBox = styled.div`
 `
 
 export const ToolItem = styled.div`
-    display: flex;
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap');    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -49,6 +44,7 @@ export const ToolItem = styled.div`
         background: rgba(255,255,255, 0.3);
     }
 `
+
 
 /*ColorTool*/
 export const ColorTool = styled.div `
