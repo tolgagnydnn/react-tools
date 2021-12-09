@@ -21,10 +21,8 @@ import Calculator from './Calculator'
 function Tool() {
 
     const [showChildTools, setshowChildTools] = useState("");
-
-
     const childItem = (toolName) => {
-        setshowChildTools(toolName)
+        setshowChildTools(toolName);
     };
 
     return (
@@ -41,11 +39,11 @@ function Tool() {
             {
                 tool?.map((tool) => (
                     <>
-                    <ToolItem key={tool.id} onClick={() => childItem(tool.name)}>
-                        <Icon iconName={`${tool.icon}`}/> 
-                        <span> {tool.name} </span>
-                    </ToolItem>
-                        <>
+                        <ToolItem key={tool.id} onClick={() => childItem(tool.name)}>
+                            <Icon iconName={`${tool.icon}`}/> 
+                            <span> {tool.name} </span>
+                        </ToolItem>
+                        
                         {showChildTools === "Boyut" && 
                         <SizeTool>
                         {tool.childsize?.map((childsize) => {
@@ -55,6 +53,7 @@ function Tool() {
                             })}
                         </SizeTool>                        
                         }
+
                         {showChildTools === "Şekiller" && 
                                 <ShapeTool>
                                     {tool.childshapes?.map((childshapes) => {
@@ -67,6 +66,7 @@ function Tool() {
                                 })}
                                 </ShapeTool>
                         }
+
                         {showChildTools === "Renkler" &&
                             <ColorTool>
                                 {tool.childcolor?.map((childcolor) => {
@@ -76,20 +76,20 @@ function Tool() {
                                 })}
                             </ColorTool>                        
                         }
+
                         {showChildTools === "Sayaç" &&  <CounterTime></CounterTime>}
                         {showChildTools === "Hesaplama" && <Calculator></Calculator>}
                     </>
-                    </>
                 ))
             }
-            <ToolBoxBottom> 
-                    <Dotted></Dotted>
-                    <Dotted></Dotted>
-                    <Dotted></Dotted>
-                    <Dotted></Dotted>
-                    <Dotted></Dotted>
-                    <Dotted></Dotted>
-            </ToolBoxBottom>
+                    <ToolBoxBottom> 
+                            <Dotted></Dotted>
+                            <Dotted></Dotted>
+                            <Dotted></Dotted>
+                            <Dotted></Dotted>
+                            <Dotted></Dotted>
+                            <Dotted></Dotted>
+                    </ToolBoxBottom>
             </ToolBox>
         </>
     )
