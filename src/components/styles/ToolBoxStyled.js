@@ -54,9 +54,6 @@ export const Dotted = styled.div `
        
 `
     
-
-
-
 export const ToolItem = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap');    display: flex;
     justify-content: center;
@@ -68,6 +65,7 @@ export const ToolItem = styled.div`
     border-radius:.548rem;
     transition: all .4s ease;
     position: relative;
+    background: ${props => props.active ? "255,255,255, 0.3" : "transparent"};
     svg {
         fill: #fff;
         width: 25px;
@@ -90,27 +88,18 @@ export const ToolItem = styled.div`
 /*ColorTool*/
 export const ColorTool = styled.div `
     position: absolute;
-    right: -90px;
+    top:50%;
+    left:-30%;
+    transform:translate(-50%, -50%);
     height: auto;
-    max-width:150px;
+    width:50px;
     background: #27293d;
     border-radius: 15px;
-    box-shadow: 0 1px 20px 0 rgb(0 0 0 / 20%);
-    padding: 15px 10px;
-    display: none;
-    grid-template-columns: 2fr auto;
-    grid-gap: 6px;
-    ${ToolItem}:hover & {
-        display: grid;
-    }
-    &:before {
-        content:'';
-        height:100%;
-        width: 50px;
-        position: absolute;
-        left: -15px;
-        background: transparent;
-    }
+    padding:10px 5px 15px 5px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
 `
 
 export const handleColorType = color => {
@@ -135,6 +124,7 @@ export const handleColorType = color => {
   
 
 export const ColorBox = styled.button `
+    margin-top: 5px;
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -151,23 +141,11 @@ export const ColorBox = styled.button `
 
 /*SizeTool*/
 export const SizeTool = styled(ColorTool)`
-    display: none;
+    display: flex;
     justify-content: center;
     align-items:center;
     flex-direction:column;
-    left: -84px;
     max-width:50px;
-    ${ToolItem}:hover & {
-        display: flex;
-    }
-    &:before {
-        content:'';
-        height:100%;
-        width: 50px;
-        position: absolute;
-        left: 40px;
-        background: transparent;
-    }
 `;
 
 export const handleSizeType = size => {
@@ -205,30 +183,10 @@ export const SizeLength = styled.button `
 
 /*Shape Tool*/
 export const ShapeTool = styled(ColorTool)`
-    display: none;
     justify-content: center;
     align-items:center;
     flex-direction:column;
-    max-width:75px;
     padding: 10px 8.5px;
-    ${ToolItem}:hover & {
-        display: flex;
-    }
-    &:before {
-        content:'';
-        height:100%;
-        width: 50px;
-        position: absolute;
-        left: -30px;
-        background: transparent;
-    }
-    div {
-        margin-bottom: 5px;
-    }
-    svg {
-        width: 20px;
-        height: 20px;
-    }
     span {
         font-size:10px;
     }

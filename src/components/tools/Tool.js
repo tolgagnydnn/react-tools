@@ -10,9 +10,13 @@ import Calculator from './Calculator'
 function Tool() {
 
     const [showCalculator, setshowCalculator] = useState(false);
-    const [showTime, setshowTime] = useState(false)
+    const [showTime, setshowTime] = useState(false);
+    const [showColors, setShowColors] = useState(false);
+    const [showShapes, setshowShapes] = useState(false);
+    const [showSize, setshowSize] = useState(false)
 
     const childItem = (toolName) => {
+
         if (toolName === "Sayaç") {
             setshowTime(!showTime);
             setshowCalculator(false);
@@ -20,8 +24,20 @@ function Tool() {
         } else if (toolName === "Hesaplama") {
             setshowCalculator(!showCalculator);
             setshowTime(false);
-        } else {
+        } else if (toolName === "Renkler") {
+            setShowColors(!showColors)
             setshowTime(false);
+            setshowCalculator(false);
+        } else if (toolName === "Şekiller") {
+            setshowShapes(!showShapes)
+            setshowTime(false);
+            setShowColors(false)
+            setshowCalculator(false);
+        } else if (toolName === "Boyut") {
+            setshowSize(!showSize)
+            setshowShapes(false)
+            setshowTime(false);
+            setShowColors(false)
             setshowCalculator(false);
         }
       };
@@ -43,40 +59,38 @@ function Tool() {
                 <ToolItem key={tool.id} onClick={() => childItem(tool.name)}>
                     <Icon iconName={`${tool.icon}`}/> 
                     <span> {tool.name} </span>
-                    {tool.childshapes &&
-                        <ShapeTool>
-                            {tool.childshapes?.map((childshapes) => {
-                            return (
-                                <ToolItem key={childshapes.id}> 
-                                    <Icon iconName={`${childshapes.icon}`}/> 
-                                    <span> {childshapes.name} </span>
-                                </ToolItem>
-                            );
-                        })}
-                        </ShapeTool>
-                    } 
-                    { tool.childsize && 
+                </ToolItem>
+                    <>
+                    {showSize && 
                     <SizeTool>
                     {tool.childsize?.map((childsize) => {
-                    return (
+                        return (
                             <SizeLength key={childsize.id} size={childsize.size}></SizeLength>
                             );
                         })}
                     </SizeTool>                        
                     }
-                    { tool.childcolor && 
-                    <ColorTool>
-                    {tool.childcolor?.map((childcolor) => {
-                    return (
-                            <ColorBox key={childcolor.id} color={childcolor.color}></ColorBox>
-                            );
-                        })}
-                    </ColorTool>                        
+                    {showShapes &&
+                            <ShapeTool>
+                                {tool.childshapes?.map((childshapes) => {
+                                return (
+                                    <ToolItem key={childshapes.id}> 
+                                        <Icon iconName={`${childshapes.icon}`}/> 
+                                        <span> {childshapes.name} </span>
+                                    </ToolItem>
+                                );
+                            })}
+                            </ShapeTool>
                     }
-                    {
-                }
-                </ToolItem>
-                 <>
+                    {showColors &&
+                        <ColorTool>
+                            {tool.childcolor?.map((childcolor) => {
+                            return (
+                                <ColorBox key={childcolor.id} color={childcolor.color}></ColorBox>
+                                );
+                            })}
+                        </ColorTool>                        
+                    }
                     {showTime && <CounterTime></CounterTime>}
                     {showCalculator && <Calculator></Calculator>}
                   </>
