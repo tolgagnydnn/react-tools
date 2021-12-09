@@ -67,7 +67,7 @@ export const ToolItem = styled.div`
     border-radius:.548rem;
     transition: all .4s ease;
     position: relative;
-    background: ${props => props.active ? "255,255,255, 0.3" : "transparent"};
+    background: ${props => props.active ? "#ffffff4d" : "transparent"};
     svg {
         fill: #fff;
         width: 25px;
