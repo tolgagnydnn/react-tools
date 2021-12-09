@@ -5,12 +5,13 @@ export const CounterTimeBox = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap');
     font-family: 'Poppins', sans-serif;
     position: absolute;
-    left: -460px;
+    left: -385px;
     top: 0;
     border-radius: 1rem;
     background: #27293d;
-    width: 450px;
+    width: 375px;
     height: 200px;
+   
 `
 
 export const CloseCounterTimeBox = styled.button`
@@ -42,14 +43,14 @@ export const CounterTitle = styled.p`
  
 
 export const CounterTimeBoxBody = styled.div`
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 175px auto;
     align-items: center;
 
 `
 
 export const CounterSelectTime = styled.div`
-    padding:5px 10px;
+    padding:5px 25px;
     position: relative;
     
     &:before {
@@ -158,26 +159,25 @@ export const TimeNumberBox = styled.div`
 `
 
 export const TimerİconsBox = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;    
+    text-align: center;
 `
 
 export const StartTimeButton = styled.button`
         background: none;
         border:none;
-        padding-left: 5px;
         cursor: pointer;
-        margin-right: 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    p {
-        border-radius: 10px;
-        border: solid 1px #56586f;
-        font-size: 12px;
-        padding:10px 20px;
-        color:#fff;
-        margin: 0 3px!important;
-    }
+        text-align: center;
+        svg {
+            border-radius: 10px;
+            width: 30px;
+            height: 30px;
+            fill:#fff;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+        p {
+            border:solid 1px #56586f;
+            padding:5px 10px;
+            border-radius: 1rem;
+        }
 `

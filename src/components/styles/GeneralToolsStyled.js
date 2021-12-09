@@ -11,14 +11,13 @@ export const GeneralToolClose = styled.div `
     width: 18px;
     height: 18px;
     padding: 7px;
-    transform: translate(-50%, 150%);
+    margin-left: 3px;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all .5s ease;
     text-align: center;
-    visibility: hidden;
-    opacity: 0;
     svg {
         fill: #fff;
         width: 18px;
@@ -40,11 +39,6 @@ export const GeneralToolBox = styled.div`
     transform: translate(-50%, -50%);
     padding: 8px 20px;
     border-radius:3rem;
-    &:hover ${GeneralToolClose} {
-    visibility: visible;
-    transform: translate(-50%, -50%);
-    opacity:1;
-    }
 `
 
 export const GeneralButton = styled.div`

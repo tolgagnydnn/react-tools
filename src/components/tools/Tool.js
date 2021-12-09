@@ -9,18 +9,22 @@ import Calculator from './Calculator'
 
 function Tool() {
 
-    // const [calculaterShow, setCalculaterShow] = useState(false)
-    // const [counterTimeShow, setCounterTimeShow] = useState(false)
+    const [showCalculator, setshowCalculator] = useState(false);
+    const [showTime, setshowTime] = useState(false)
 
-    // const handleClick = () => {
-    //     for (const tools of tool) {
-    //         if (tools.isClickCalculator === false) {
-    //             tools.isClickCalculator = !tools.isClickCalculator
-    //         }
-    //     }
-    // }
-
-    
+    const childItem = (toolName) => {
+        if (toolName === "Sayaç") {
+            setshowTime(!showTime);
+            setshowCalculator(false);
+         
+        } else if (toolName === "Hesaplama") {
+            setshowCalculator(!showCalculator);
+            setshowTime(false);
+        } else {
+            setshowTime(false);
+            setshowCalculator(false);
+        }
+      };
 
     return (
         <>
@@ -36,19 +40,15 @@ function Tool() {
            {
             tool?.map((tool) => (
                 <>
-                <ToolItem key={tool.id}>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox={tool.viewbox} version="1.1" preserveAspectRatio="xMidYMid meet">
-                        <path d={tool.icon}/>
-                    </svg> 
+                <ToolItem key={tool.id} onClick={() => childItem(tool.name)}>
+                    <Icon iconName={`${tool.icon}`}/> 
                     <span> {tool.name} </span>
                     {tool.childshapes &&
                         <ShapeTool>
                             {tool.childshapes?.map((childshapes) => {
                             return (
                                 <ToolItem key={childshapes.id}> 
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox={childshapes.viewbox}>
-                                        <path d={childshapes.icon}/>
-                                    </svg>
+                                    <Icon iconName={`${childshapes.icon}`}/> 
                                     <span> {childshapes.name} </span>
                                 </ToolItem>
                             );
@@ -73,19 +73,13 @@ function Tool() {
                         })}
                     </ColorTool>                        
                     }
-                </ToolItem>
-                {
-                  <>
                     {
-                     <CounterTime></CounterTime> 
-                    }
-                    {/* {
-                      <Calculator></Calculator>
-                    } */}
-                    
-                  </>
-              
                 }
+                </ToolItem>
+                 <>
+                    {showTime && <CounterTime></CounterTime>}
+                    {showCalculator && <Calculator></Calculator>}
+                  </>
                 </>
             ))
            }
@@ -97,10 +91,7 @@ function Tool() {
                  <Dotted></Dotted>
                  <Dotted></Dotted>
            </ToolBoxBottom>
-          
-         
         </ToolBox>
-
         </>
     )
 }
