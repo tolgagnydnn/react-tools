@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 
+
+
 export const ToolBox = styled.div`
     height: auto;
     max-width:150px;
@@ -141,10 +143,6 @@ export const ColorBox = styled.button `
 
 /*SizeTool*/
 export const SizeTool = styled(ColorTool)`
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    flex-direction:column;
     max-width:50px;
 `;
 
@@ -183,9 +181,6 @@ export const SizeLength = styled.button `
 
 /*Shape Tool*/
 export const ShapeTool = styled(ColorTool)`
-    justify-content: center;
-    align-items:center;
-    flex-direction:column;
     padding: 10px 8.5px;
     span {
         font-size:10px;
