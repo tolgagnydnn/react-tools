@@ -7,17 +7,15 @@ export const ToolBox = styled.div`
     background: #27293d;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    border-radius: 1rem;
     box-shadow: 0 1px 20px 0 rgb(0 0 0 / 10%);
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    right: 5%;
+    top: 10%;
     padding: 15px 10px;
+`
 
-    /* &:before {
-        content: '';
-        background:red;
+export const ToolBoxTop = styled.div`
+        background:#1e213d;
         width:100%;
         position: absolute;
         top: -25px;
@@ -25,10 +23,14 @@ export const ToolBox = styled.div`
         height:30px;
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
-    }
-    &:after {
-        content: '';
-        background:red;
+        cursor:move;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+`
+
+export const ToolBoxBottom = styled.div`
+        background:#1e213d;
         width:100%;
         position: absolute;
         bottom: -25px;
@@ -36,8 +38,24 @@ export const ToolBox = styled.div`
         height:30px;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
-    } */
+        cursor:move;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+
+` 
+export const Dotted = styled.div `
+        
+    width:2px;
+    height:2px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 5px;
+       
 `
+    
+
+
 
 export const ToolItem = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap');    display: flex;

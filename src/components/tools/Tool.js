@@ -1,16 +1,45 @@
-import  React from 'react'
-import { ToolBox, ToolItem, ColorTool, ShapeTool, SizeTool, SizeLength, ColorBox } from '../styles/ToolBoxStyled'
+import { useState } from 'react'
+import { ToolBox, ToolItem, ColorTool, ShapeTool, SizeTool, SizeLength, ColorBox, Dotted, ToolBoxTop, ToolBoxBottom } from '../styles/ToolBoxStyled'
 import tool from '../../tool.json'
+import CounterTime from './CounterTime'
+import Icon from './Icon'
+import Calculator from './Calculator'
+
+
 
 function Tool() {
+
+    // const [calculaterShow, setCalculaterShow] = useState(false)
+    // const [counterTimeShow, setCounterTimeShow] = useState(false)
+
+    // const handleClick = () => {
+    //     for (const tools of tool) {
+    //         if (tools.isClickCalculator === false) {
+    //             tools.isClickCalculator = !tools.isClickCalculator
+    //         }
+    //     }
+    // }
+
+    
+
     return (
+        <>
         <ToolBox>
+             <ToolBoxTop>
+                 <Dotted></Dotted>
+                 <Dotted></Dotted>
+                 <Dotted></Dotted>
+                 <Dotted></Dotted>
+                 <Dotted></Dotted>
+                 <Dotted></Dotted>
+             </ToolBoxTop>
            {
             tool?.map((tool) => (
+                <>
                 <ToolItem key={tool.id}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox={tool.viewbox} version="1.1" preserveAspectRatio="xMidYMid meet">
                         <path d={tool.icon}/>
-                    </svg>
+                    </svg> 
                     <span> {tool.name} </span>
                     {tool.childshapes &&
                         <ShapeTool>
@@ -44,11 +73,35 @@ function Tool() {
                         })}
                     </ColorTool>                        
                     }
-                    
                 </ToolItem>
+                {
+                  <>
+                    {
+                     <CounterTime></CounterTime> 
+                    }
+                    {/* {
+                      <Calculator></Calculator>
+                    } */}
+                    
+                  </>
+              
+                }
+                </>
             ))
            }
+           <ToolBoxBottom> 
+                <Dotted></Dotted>
+                 <Dotted></Dotted>
+                 <Dotted></Dotted>
+                 <Dotted></Dotted>
+                 <Dotted></Dotted>
+                 <Dotted></Dotted>
+           </ToolBoxBottom>
+          
+         
         </ToolBox>
+
+        </>
     )
 }
 
